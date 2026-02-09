@@ -4,12 +4,16 @@
 
 ## Быстрый старт
 ### Вариант 1: Простой запуск (рекомендуется)
-```bash
 # Скачайте готовый скрипт и запустите
 chmod +x start-oracle.sh
 ./start-oracle.sh
 
+# Необходимый софт:
+Docker-desktop
+WSL - для Windows
 
+Либо  
+Docker для Linux
 
 # Ручной запуск
 

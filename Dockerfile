@@ -4,7 +4,7 @@ ENV LANG=ru_RU.UTF-8 \
     LANGUAGE=ru_RU:ru \
     LC_ALL=ru_RU.UTF-8
 
-COPY ./scripts /docker-entrypoint-initdb.d/
+COPY ./Scripts /docker-entrypoint-initdb.d/
 
 EXPOSE 1521 5500
 

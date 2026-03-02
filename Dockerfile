@@ -1,4 +1,4 @@
-FROM container-registry.oracle.com/database/express:21.3.0-xe
+FROM gvenzl/oracle-xe:21.3.0-full
 
 ENV LANG=ru_RU.UTF-8 \
     LANGUAGE=ru_RU:ru \

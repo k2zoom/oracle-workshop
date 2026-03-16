@@ -60,6 +60,7 @@ EXISTS	                                IN
 Полезен для поиска записей, которых нет в связанной таблице
 Альтернатива: LEFT JOIN + проверка NULL
 
+
 3. PL/SQL — ПРОЦЕДУРНЫЙ ЯЗЫК ORACLE
 3.1 Определение
 PL/SQL (Procedural Language / Structured Query Language) — это процедурное расширение SQL, разработанное Oracle Corporation. Оно добавляет в SQL процедурные элементы: переменные, условия, циклы, обработку ошибок.
@@ -165,6 +166,7 @@ RAISE для генерации исключения
 3.11 Транзакции в PL/SQL
 COMMIT — сохранение изменений
 ROLLBACK — отмена изменений
+
 SAVEPOINT — точка сохранения
 Автономные транзакции (PRAGMA AUTONOMOUS_TRANSACTION)
 

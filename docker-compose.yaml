@@ -1,17 +1,14 @@
-version: '3.8'
-
 services:
   oracle-xe:
     build: .
     container_name: oracle-workshop
     ports:
       - "1521:1521"   # Основной порт для подключения к БД
-      - "5500:5500"   # Пор для Enterprise Manager
+      - "5500:5500"   # Порт для Enterprise Manager
       - "8080:8080"   # Порт для ORDS/APEX (если понадобится)
     environment:
-      - ORACLE_PWD=StudentPass123!  # Пароль для SYS, SYSTEM и PDBADMIN
+      - ORACLE_PASSWORD=StudentPass123!  # Исправлено: ORACLE_PWD -> ORACLE_PASSWORD
       - ORACLE_CHARACTERSET=AL32UTF8
-      - ORACLE_NLS_CHARACTERSET=AL32UTF8
     volumes:
       - oracle-data:/opt/oracle/oradata  # Сохраняем данные
       - ./backups:/opt/oracle/backups    # Для бэкапов

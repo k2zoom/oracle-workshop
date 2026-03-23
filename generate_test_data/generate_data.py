@@ -7,6 +7,8 @@ import os
 from datetime import datetime
 import time
 from settings import CITIES
+import schedule 
+
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 env = os.environ
@@ -80,6 +82,7 @@ def get_weather_data(city):
         return None
 
 def main():
+    logging.info("Starting weather data collection...")
     conn = create_bd_connection()
     if not conn:
         logging.error("Failed to create database connection")
@@ -140,6 +143,23 @@ def main():
         conn.rollback()
     finally:
         conn.close()
+    logging.info("Weather data collection completed")
+
+def run_scheduler():
+    """Запуск планировщика для выполнения задачи каждый час"""
+    main()
+    schedule.every().hour.do(main)
+    logging.info("Scheduler started. Task will run every hour.")
+    while True:
+        try:
+            schedule.run_pending()
+            time.sleep(60)
+        except KeyboardInterrupt:
+            logging.info("Scheduler stopped by user")
+            break
+        except Exception as e:
+            logging.error(f"Error in scheduler: {e}")
+            time.sleep(60)
 
 if __name__ == '__main__':
-    main()
+    run_scheduler()

@@ -8,7 +8,7 @@ from datetime import datetime
 import time
 from settings import CITIES
 
-logging.basicConfig(level=logging.INFO,з format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 env = os.environ
 DATA_URL = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'
 
